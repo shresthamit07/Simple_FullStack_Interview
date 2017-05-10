@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wistia Full Stack Coding Challenge</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js"> </script>
+        <script src="../wistia-min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    </head>
+    <body>
+          <div class="col-xs-2" id="count_container">
+            <span class='p_text'> <%=@total_count || 0 %>   People </span>
+          </div>
+          <form action="/" method="POST" enctype="multipart/form-data"> 
+            <div class="col-xs-6" id="import_container">
+              <span class="import_label">Import a File</span>
+              <input type="file" name='file_upload' class="filestyle upload_file" data-icon="false" data-buttonText="Browse" data-placeholder="<%= @filename || ''%>">
+            </div>
+          </form>
+
+        <div id="display_table">
+          <table id="user_info_table" class="table display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="user_attr">Last Name</th>
+                    <th>First Name</th>
+                    <th>Middle Initial</th>
+                    <th>Pet</th>
+                    <th>Birthday</th>
+                    <th class='hidden'></th>
+                    <th>Favorite Color</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% if !(@user_detail.nil?) %>
+            <% @user_detail.each do |user|%>
+              <tr>
+                  <td><%= user['LastName'] %></td>
+                  <td><%= user['FirstName'] %></td>
+                  <td><%= user['MiddleInitial'] %></td>
+                  <%pet_value = user['Pet']%>
+                  <%if ['Cat', 'C'].include?(pet_value)%>
+                    <%image = '\cat.png'%>
+                  <%elsif ['Dog', 'D'].include?(pet_value)%>
+                    <%image = '\dog.png'%>
+                  <%elsif ['Both'].include?(pet_value)%>
+                    <%image = '\both.png'%>
+                  <%end%>
+
+                  <%if image.nil?%>
+                    <td class='no_pet_image'><%= user['Pet'] %></td>
+                  <%else%>
+                    <td><img src='<%=image%>' class='pet_image'><%= user['Pet'] %></td>
+                  <%end%>
+                  <td><%= user['DateOfBirth'].gsub('-', '/') || '' %></td>
+                  <td class='hidden'><%= user['DateOfBirth'].split('-').reverse.join() || '' %></td>
+                  <td><%= user['FavoriteColor'] %></td>
+              </tr>
+            <%end%>
+            <%end%>
+            </tbody>
+          </table>
+        </div>
+
+
+
+    </body>
+</html>

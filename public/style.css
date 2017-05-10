@@ -1,0 +1,89 @@
+#import_container{
+  float: right;
+}
+.input-group{
+  border-radius: 4px;
+  width: 430px;
+  font-size: 13px;
+}
+input.form-control{
+  width: 320px;
+}
+.input-group-btn{
+  width: 110px;
+  font-size: 15px;
+}
+label.btn-default{
+  width: 100%;
+  background: #54bbff;
+  color: white;
+}
+.import_label{
+  float: left;
+  padding: 6px;
+  margin-right: 20px;
+}
+
+#display_table{
+  width: 87%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.no_pet_image{
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.3);
+  background-color: #ffffff; 
+}
+
+#count_container{
+  float: left;
+  margin-left: 75px;
+}
+.p_text{
+  float: left;
+  padding: 9px;
+  font-size: 25px;
+  color: #363945;
+  margin-bottom: 40px;
+}
+
+/*datatable css*/
+#user_info_table {
+  border-color: #e6e7e8;
+}
+#user_info_table thead tr th{
+  color: #a7a9ac;
+  font-weight: normal;
+  text-align: left;
+  border-bottom: 1px solid #e6e7e8;
+}
+#user_info_table thead tr td{
+  /*vertical-align: middle;*/
+}
+#user_info_table tbody tr td{
+  vertical-align: middle;
+  background-color: #ffffff;
+  border-color: #e6e7e8;
+}
+#user_info_table tbody tr{
+  width: 16%;
+  height: 50px;
+  font-size: 15px;
+  color: #363945;
+  font-weight: regular;
+  text-align: left;
+}
+#user_info_table tbody tr td img.pet_image{
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+}
+#user_info_table .sorting, .sorting_asc, .sorting_desc {
+    background : none;
+}
+.highlight{
+  font-weight: bold !important;
+  color: #54bbff !important;
+  background-image: url(/arrow.png) !important;
+  background-size: 18px !important;
+}

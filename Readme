@@ -1,0 +1,40 @@
+
+First, unzip the project
+
+1. How to run the project?
+
+	I assume that Ruby has been properly installed in your computer. I used Sinatra, which is a light-weight web framework for Ruby, to build this application.
+
+	i. Go to the project directory
+	ii. Install gem Sinatra.
+		> gem install Sinatra
+	iii. Once the sinatra is installed, just run the app.rb file. (*Note: Make sure that you are in the project directory)
+		> ruby app.rb
+
+	iv. visit http://localhost:4567
+
+2. How to run the test?
+	I used Rspec to test this application. So, a rspec gem need to be installed in your computer.
+
+	i. Go to the project directory
+	ii. Install rspec gem
+		> gem install rspec
+	iii. Type following command to run the test
+		> rspec spec/app_spec.rb
+
+3. Implementation
+	> I used Ruby to develop this application and sinatra as a web framework. 
+	> "App.rb" is the main file with all the routes and methods to interact with the interface.
+	> "index.erb" is a file inside views directory, which is the front end design of the application.
+	> I created public folder and put all the given input files in it, so that it is accessible in the application.
+	> style.css and wistia-min.js are the css and javascript files for the project.
+	> I have created a spec folder to include the app_spec.rb which includes the code for testing the application.
+
+	> I used bootstrap, which is an open source css framework, to build the better design of the application.
+	> For designing the html table with sorting functionality, I used jquery dataTable plugin which is an open 	source jquery plugin for better table functionality.
+
+	Note: As I have used the online cdn link to integrate the bootstrap and jquery dataTable, you need to have internet connection to see the effect of those plugins.
+	for eg. <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script> has been used for jQuery dataTable. 
+
+4. Comments
+	Overall it is interesting to build this application as a Full Stack Coding Challenge. I used my experience to build the application. 
