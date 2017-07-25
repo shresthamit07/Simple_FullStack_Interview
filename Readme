@@ -27,7 +27,7 @@ First, unzip the project
 	> "App.rb" is the main file with all the routes and methods to interact with the interface.
 	> "index.erb" is a file inside views directory, which is the front end design of the application.
 	> I created public folder and put all the given input files in it, so that it is accessible in the application.
-	> style.css and wistia-min.js are the css and javascript files for the project.
+	> style.css and fullstack-min.js are the css and javascript files for the project.
 	> I have created a spec folder to include the app_spec.rb which includes the code for testing the application.
 
 	> I used bootstrap, which is an open source css framework, to build the better design of the application.

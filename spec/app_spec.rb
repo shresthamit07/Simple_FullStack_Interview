@@ -3,7 +3,7 @@ ENV['RACK_ENV'] = 'test'
 require 'rack/test'
 require_relative '../app.rb'
 
-describe 'Wistia' do
+describe 'FullStack' do
   include Rack::Test::Methods
 
   def app
